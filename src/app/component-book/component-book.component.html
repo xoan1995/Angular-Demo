@@ -1,33 +1,35 @@
 <div class="container">
-    <h1>Book template</h1>
+  <h1>{{title}}</h1>
+  <input type="text" [placeholder] = "title">
+  <hr>
   <table class="table">
     <thead>
       <tr class="table-primary">
-        <th class="table-primary">scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th class="table-primary">STT</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Publishing year</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>Moonwalking with Einstein</td>
+        <td>Joshua Foer và Mike Chamberlain</td>
+        <td>2020</td>
       </tr>
       <tr>
         <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
+        <td> You Don’t Know JS</td>
+        <td>Kyle Simpson</td>
+        <td>2020</td>
       </tr>
       <tr>
         <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
+        <td >Clean Code </td>
+        <td>Robert C. Martin</td>
+        <td>2020</td>
       </tr>
     </tbody>
   </table>
- 
 </div>
