@@ -1,50 +1,84 @@
 <div class="container">
-    <h1>{{title}}</h1>
-    <input class="btn btn-primary" type="text" [value]="title" readonly>
-    <hr>
-    <span>Click event !</span>
-    <button class="btn btn-primary" (click)="onClick()">Click event</button> {{message}}
-    <hr>
-    <span>On key event !</span>
-    <input class="form-control" (keyup)="onKey($event)" placeholder="Search...">
-    <p>result: {{values}}</p>
-    <hr>
-    <span>Get data right in the template !</span>
-    <input class="form-control" #box type="text" placeholder="Write something..." (keyup)="0">
-    <p>result: {{box.value}}</p>
-    <hr>
-    <span>On enter event !</span>
-    <input class="form-control" #enter (keyup.enter)="onEnter(enter.value)" type="text" placeholder="Write something...">
-    <p>result: {{ enterValue}}</p>
-    <hr>
-    <table class="table">
+    <div class="row">
+        <div class="col-6">
+            <h1>{{ title }}</h1>
+            <input class="btn btn-primary" type="text" [value]="title" readonly />
+            <hr />
+            <span>Click event !</span>
+            <button class="btn btn-primary" (click)="onClick()">Click event</button> {{ message }}
+            <hr />
+            <span>On key event !</span>
+            <input class="form-control" (keyup)="onKey($event)" placeholder="Search..." />
+            <p>result: {{ values }}</p>
+            <hr />
+            <span>Get data right in the template !</span>
+            <input class="form-control" #box type="text" placeholder="Write something..." (keyup)="(0)" />
+            <p>result: {{ box.value }}</p>
+            <hr />
+            <span>On enter event !</span>
+            <input class="form-control" #enter (keyup.enter)="onEnter(enter.value)" type="text" placeholder="Write something..." />
+            <p>result: {{ enterValue }}</p>
+            <hr />
+            <input type="text" [(ngModel)]="name" #demo="ngModel" required /><br />
+            <span>Value: {{ name }}</span
+      ><br />
+      <span>Valid: {{ demo.valid }}</span
+      ><br />
+      <button (click)="setName()">set name</button>
+    </div>
+    <div class="col-6">
+      <table class="table">
         <thead>
-            <tr class="table-primary">
-                <th class="table-primary">STT</th>
-                <th scope="col">Name</th>
-                <th scope="col">Author</th>
-                <th scope="col">Publishing year</th>
-            </tr>
+          <tr class="table-primary">
+            <th class="table-primary">STT</th>
+            <th scope="col">Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Publishing year</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Moonwalking with Einstein</td>
-                <td>Joshua Foer và Mike Chamberlain</td>
-                <td>2020</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td> You Don’t Know JS</td>
-                <td>Kyle Simpson</td>
-                <td>2020</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Clean Code </td>
-                <td>Robert C.Martin</td>
-                <td>2020</td>
-            </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>Moonwalking with Einstein</td>
+            <td>Joshua Foer và Mike Chamberlain</td>
+            <td>2020</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>You Don’t Know JS</td>
+            <td>Kyle Simpson</td>
+            <td>2020</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Clean Code</td>
+            <td>Robert C.Martin</td>
+            <td>2020</td>
+          </tr>
         </tbody>
-    </table>
+      </table>
+      <h3>ngModel và Form</h3>
+      <form
+        class="form-control"
+        action=""
+        #form="ngForm"
+        (ngSubmit)="onSubmit(form)"
+        novalidate
+      >
+        <label for="">First name: </label>
+        <input
+          class="form-control"
+          type="text"
+          name="first"
+          ngModel
+          required
+          #first="ngModel"
+          required
+        />
+        <label for="">Last name: </label>
+        <input class="form-control" type="text" name="last" ngModel required /><br />
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
 </div>

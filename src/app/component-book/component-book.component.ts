@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-component-book',
-  template: "<h2>Let say hello {{title}}</h2>",
   templateUrl: './component-book.component.html',
   styleUrls: ['./component-book.component.css']
 })
@@ -11,6 +11,8 @@ export class ComponentBookComponent implements OnInit {
   values = "";
   message = "";
   enterValue= "";
+  ngModel: any;
+  name: string = "";
   constructor() { }
   ngOnInit(): void {
   }
@@ -25,5 +27,14 @@ export class ComponentBookComponent implements OnInit {
   }
   onEnter(value: string){
     this.enterValue = value;
+  }
+
+  setName(){
+    this.name = "Xoan";
+  }
+
+  onSubmit(form: NgForm){
+    console.log(form.value);
+    console.log(form.valid);
   }
 }

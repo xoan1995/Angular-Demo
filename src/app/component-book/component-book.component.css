@@ -1,0 +1,41 @@
+form.ng-untouched {
+    background-color: black;
+    color: white;
+}
+
+form.ng-touched {
+    background-color: rgb(61, 201, 54);
+    color: white;
+}
+
+form.ng-pristine {
+    background-color: rgb(211, 134, 166);
+    color: white;
+}
+
+form.ng-dirty {
+    background-color: rgb(230, 215, 215);
+    color: white;
+}
+
+
+/* form.ng-valid {
+    background-color: red;
+    color: white;
+} */
+
+
+/* form.ng-invalid {
+    background-color: rgb(68, 140, 186);
+    color: white;
+} */
+
+form.ng-valid-key {
+    background-color: rgb(187, 206, 67);
+    color: white;
+}
+
+form.ng-invalid-key {
+    background-color: rgb(200, 218, 182);
+    color: white;
+}
