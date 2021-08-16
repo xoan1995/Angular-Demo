@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./component-book.component.css']
 })
 export class ComponentBookComponent implements OnInit {
-
-  constructor() { }
   title = "List books";
+  values = "";
+  message = "";
+  enterValue= "";
+  constructor() { }
   ngOnInit(): void {
+  }
+
+  onClick() {
+    this.message = " Đố anh bắt được em :)";
+  }
+
+  onKey(event: any) {
+    // this.values = (<HTMLInputElement>event.target).value;
+    this.values = event.target.value;
+  }
+  onEnter(value: string){
+    this.enterValue = value;
   }
 }
