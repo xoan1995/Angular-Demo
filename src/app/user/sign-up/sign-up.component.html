@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="card mt-5">
+            <div class="card-body">
+                <h1 class="card-header">Sign up</h1>
+                <form [formGroup]="signUpForm" (ngSubmit)="createUser()">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img src="https://img.icons8.com/wired/45/000000/contact-card.png"/></span>
+                        <input formControlName="nickname" name="nickname" type="text" placeholder="Nick name" class="form-control">
+                    </div>
+                    <span *ngIf="nickname?.invalid && nickname?.touched" class="error"> Nickname can not be empty!</span>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img src="https://img.icons8.com/wired/45/000000/contact-card.png"/></span>
+                        <input formControlName="firstName" name="firstName" type="text" placeholder="First name" class="form-control">
+                    </div>
+                    <span *ngIf="firstName?.invalid && firstName?.touched" class="error">First name can not be empty!</span>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img src="https://img.icons8.com/wired/45/000000/contact-card.png"/></span>
+                        <input formControlName="lastName" name="lastName" type="text" placeholder="Last name" class="form-control">
+                    </div>
+                    <span *ngIf="lastName?.invalid && lastName?.touched" class="error">Last name can not be empty!</span>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img src="https://img.icons8.com/wired/45/000000/secured-letter.png" /></span>
+                        <input formControlName="email" name="email" type="email" placeholder="" placeholder="Email address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
+                    <div class="col-12" *ngIf="f.email.invalid && f.email.touched">
+                        <div *ngIf="f.email.errors">
+                            <span class="error" *ngIf="f.email.errors.required">Email không được để trống!</span>
+                            <span class="error" *ngIf="f.email.errors.email">Email không hợp lệ</span>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img src="https://img.icons8.com/wired/45/000000/key-security.png"/></span>
+                        <input formControlName="password" name="password" type="password" placeholder="Password" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <div class="col-12" *ngIf="f.password.invalid && f.password.touched">
+                            <div class="col-12" *ngIf="f.password.errors">
+                                <span class="error" *ngIf="f.password.errors.required">Password can not be empty!</span>
+                                <span class="error" *ngIf="f.password.errors.minLength">Password is too short!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="signUpForm.valid">
+                        <button type="submit" (click)="createUser()" class="btn btn-primary col-12">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-3"></div>
+</div>

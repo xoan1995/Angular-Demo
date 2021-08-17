@@ -39,3 +39,7 @@ form.ng-invalid-key {
     background-color: rgb(200, 218, 182);
     color: white;
 }
+
+a:hover {
+    color: blue !important;
+}

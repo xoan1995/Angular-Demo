@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <h1 appChangeText>{{ title }}</h1>
+        <button class="btn btn-primary col-2" (click)="onCreateClick()">Create</button>
+        <hr />
+        <table class="table">
+            <thead>
+                <tr class="table-primary">
+                    <th class="table-primary">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publishing year</th>
+                    <th scope="col">action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of bookList ">
+                    <th scope="row">{{book.id}}</th>
+                    <td><a (click)="onReadBookClickted(book)">
+                            {{book.name}}
+                        </a>
+                    </td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.publishingYear}}</td>
+                    <td>
+                        <!-- <a href="/book.id/edit" class="btn btn-primary">edit</a> -->
+                        <button class="btn btn-primary" (click)="onEditBookClickted(book)">
+                            Edit
+                          </button>
+                        <button class="btn btn-danger" (click)="deleteBook(book.id)">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

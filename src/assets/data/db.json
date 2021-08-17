@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "nickname": "Xoan Thị",
+      "firstName": "Xoan",
+      "lastName": "Nguyễn",
+      "email": "hoanglapnhue@gmail.com",
+      "password": "xoan",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nickname": "Xinh Thị",
+      "firstName": "Xinh",
+      "lastName": "Nguyễn",
+      "email": "xinhnguyen@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": 3,
+      "nickname": "admin",
+      "firstName": "Ad",
+      "lastName": "Min",
+      "email": "admin@gmail.com",
+      "password": "12345"
+    },
+    {
+      "nickname": "Xoanthi",
+      "firstName": "Nguyễn",
+      "lastName": "Xoan",
+      "email": "hoanglapnhue@gmail.com",
+      "password": "xoanthi",
+      "id": 4
+    }
+  ],
+  "books": [
+    {
+      "name": "Code Complete 3",
+      "author": "Steve McConnell",
+      "publishingYear": "2021-08-12",
+      "id": 1
+    },
+    {
+      "name": " Những Tấm Lòng Cao Cả ",
+      "author": "Edmondo De Amicis",
+      "publishingYear": "2021-08-14",
+      "id": 2
+    },
+    {
+      "name": "Triệu phú khu ổ chuột",
+      "author": "Hector Malot",
+      "publishingYear": "2021-08-27",
+      "id": 3
+    },
+    {
+      "name": "Moonwalking with Einstein",
+      "author": "Joshua Foer và Mike Chamberlain",
+      "publishingYear": "2021-08-28",
+      "id": 4
+    },
+    {
+      "name": "Đời Ngắn Đừng Ngủ Dài",
+      "author": "Hector Malot",
+      "publishingYear": "2021-08-24",
+      "id": 8
+    },
+    {
+      "name": "Những con sói già",
+      "author": "không biết",
+      "publishingYear": "2021-08-25",
+      "id": 9
+    }
+  ]
+}

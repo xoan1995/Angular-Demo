@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 *ngIf="mode == 'CREATE'">{{creater}}</h2>
+                <h2 *ngIf="mode == 'READ'">{{detail}}book</h2>
+                <h2 *ngIf="mode == 'EDIT'">{{edit}}book</h2>
+                <h1 *ngIf="mode == 'READ'">{{selectedBook.name}}</h1>
+                <h1 *ngIf="mode == 'EDIT'">{{selectedBook.name}}</h1>
+                <form [formGroup]="bookForm">
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" *ngIf="mode == 'READ'" [attr.disabled]="true" name="name" [value]="selectedBook.name" class="form-control" />
+                        <input type="text" *ngIf="mode == 'CREATE'" name="name" formControlName="name" class="form-control" />
+                        <input type="text" *ngIf="mode == 'EDIT'" [placeholder]="selectedBook.name" formControlName="name" name="name" class="form-control" />
+                        <span class="error" *ngIf="mode !== 'READ' && f.name.invalid && f.name.touched"><i>Can not be empty!</i> </span>
+                    </div>
+                    <div class="form-group">
+                        <label>Author:</label>
+                        <input *ngIf="mode == 'READ'" [attr.disabled]="true" [value]="selectedBook.author" class="form-control" />
+                        <input *ngIf="mode == 'CREATE'" name="author" formControlName="author" class="form-control" />
+                        <input *ngIf="mode == 'EDIT'" [placeholder]="selectedBook.author" formControlName="author" class="form-control" />
+                        <span class="error" *ngIf="mode !== 'READ' && f.author?.invalid && author?.touched"><i>Can not be empty!</i> </span>
+                    </div>
+                    <div class="form-group">
+                        <label>Publishing Year:</label>
+                        <input type="date" *ngIf="mode == 'READ'" [attr.disabled]="true" [value]="selectedBook.publishingYear" class="form-control" />
+                        <input type="date" *ngIf="mode == 'CREATE'" name="publishingYear" formControlName="publishingYear" class="form-control" />
+                        <input type="date" *ngIf="mode == 'EDIT'" name="publishingYear" formControlName="publishingYear" [placeholder]="selectedBook.publishingYear" class="form-control" />
+                        <span class="error" *ngIf="mode !== 'READ' && publishingYear?.invalid && publishingYear?.touched"><i>Can not be empty!</i> </span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" *ngIf="mode == 'CREATE'" (click)="create()">Save</button>
+                    <button type="submit" class="btn btn-primary" *ngIf="mode == 'EDIT'" (click)="update()">Save</button>
+                    <a style="background-color: black; color:white; margin:12px;" class="btn btn" routerLink="/books" class="btn btn-black">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-3"></div>

@@ -1,0 +1,13 @@
+.card {
+    border: 1px solid #ddd;
+    margin-top: 100px;
+    box-shadow: 1px 1px 5px #0d6efd;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.error {
+    color: red!important;
+}

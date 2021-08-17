@@ -1,0 +1,22 @@
+.signUpLink {
+    color: black;
+    text-align: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    margin-top: 100px;
+    box-shadow: 1px 1px 5px #0d6efd;
+}
+
+.error {
+    color: red;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.example-container .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
