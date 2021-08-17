@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { BookserviceService } from '../bookservice.service';
 
 @Component({
   selector: 'app-component-book',
@@ -13,8 +14,10 @@ export class ComponentBookComponent implements OnInit {
   enterValue= "";
   ngModel: any;
   name: string = "";
-  constructor() { }
+  todayDate!: Date;
+  constructor(private bookService: BookserviceService) { }
   ngOnInit(): void {
+    this.todayDate = this.bookService.showTodayDate();
   }
 
   onClick() {
@@ -37,4 +40,5 @@ export class ComponentBookComponent implements OnInit {
     console.log(form.value);
     console.log(form.valid);
   }
+
 }
